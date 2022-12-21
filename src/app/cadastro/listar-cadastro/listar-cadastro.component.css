@@ -1,0 +1,50 @@
+@import url('https://fonts.google.com/css?family=Raleway');
+
+
+.form-total {
+  width: 100vw;
+  height: 100vh;
+  color: rgb(90, 88, 88);
+  background-color: rgba(221, 236, 248, 0.906);
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  font-family:"Open Sans",sans-serif;
+  box-sizing:border-box;
+
+}
+
+.text-center {
+  padding-bottom: 25px;
+  color: rgb(17, 117, 142);
+}
+
+.form-group {
+  font-size: 1.3em;
+  line-height: 40px;
+  background-color: rgb(192, 223, 231);
+  background-image: linear-gradient(to right,  rgb(224, 229, 241), rgb(196, 220, 246));
+  padding: 20px;
+}
+
+.button {
+  background-color: rgb(29, 104, 136);
+  background-image: linear-gradient(to right, rgb(27, 122, 163), rgb(236, 239, 245));
+  color:rgba(46, 38, 38, 0.674);
+  box-shadow:0px 0px 2px rgba(255, 156, 156, 0.2);
+  width: 30vw;
+  height: 45px;
+  font-size: 25px;
+  border-radius:7px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-line {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

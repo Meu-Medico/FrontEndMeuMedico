@@ -1,0 +1,16 @@
+@import url('https://fonts.google.com/css?family=Raleway');
+
+.navbar {
+  background-color: rgba(221, 236, 248, 0.906);
+  font-family: "Open Sans",sans-serif;
+  font-size: 1.5em;
+  color: rgb(17, 117, 142);
+  text-align: center;
+  padding: 20px;
+  width: 100vw;
+
+}
+
+.container-fluid {
+  justify-content: center;
+}

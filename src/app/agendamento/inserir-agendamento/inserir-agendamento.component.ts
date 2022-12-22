@@ -22,10 +22,32 @@ agendamento!: Agendamento;
     this.agendamento = new Agendamento();
   }
 
+  agendar(): void {
+    if (this.formAgendamento.form.valid) {
+      this.agendamentoService.cadastrar(this.agendamento);
+      this.router.navigate(['/confirmacao']);
+    }
+  }
+
+  profissional(): void {
+    if (this.formAgendamento.form.valid) {
+      this.agendamentoService.cadastrar(this.agendamento);
+      this.router.navigate(['/cadastro/inserir-cadastro']);
+    }
+  }
+
+  listar(): void {
+    if (this.formAgendamento.form.valid) {
+      this.agendamentoService.cadastrar(this.agendamento);
+      this.router.navigate(['agendamento/listar-agendamento']);
+    }
+  }
+
   cadastrar(): void {
     if (this.formAgendamento.form.valid) {
       this.agendamentoService.cadastrar(this.agendamento);
-      this.router.navigate(['/agendamento/listar-agendamento']);
+      this.router.navigate(['/cadastro/inserir-cadastro']);
     }
   }
+
 }

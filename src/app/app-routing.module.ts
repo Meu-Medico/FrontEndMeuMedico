@@ -13,6 +13,11 @@ const routes: Routes = [
   { path: 'agendamento/listar-agendamento', component: ListarAgendamentoComponent },
   { path: 'agendamento/inserir-agendamento', component: InserirAgendamentoComponent },
   { path: 'confirmacao', component: ConfirmacaoComponent },
+  { path: 'confirmacao', component: InserirAgendamentoComponent },
+  { path: 'agendamento/listar-agendamento', component: InserirAgendamentoComponent },
+  { path: 'cadastro/inserir-cadastro', component: InserirAgendamentoComponent },
+  { path: 'cadastro/cadastro-profissional', component: InserirAgendamentoComponent },
+
 ];
 
 @NgModule({

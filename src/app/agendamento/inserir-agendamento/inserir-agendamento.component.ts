@@ -1,3 +1,9 @@
+import { EspecialidadeService } from './../../especialidade/services/especialidade.service';
+import { HospitalService } from './../../hospital/services/hospital.service';
+import { Hospital } from './../../shared/models/hospital.model';
+import { Especialidade } from './../../shared/models/especialidade.model';
+import { ProfissionalService } from './../../profissional/services/profissional.service';
+import { Profissional } from './../../shared/models/profissional.model';
 import { AgendamentoService } from './../services/agendamento.service';
 import { Router } from '@angular/router';
 import { Agendamento } from './../../shared/models/agendamento.model';
@@ -12,14 +18,23 @@ import { Component, ViewChild } from '@angular/core';
 export class InserirAgendamentoComponent {
 @ViewChild('formAgendamento') formAgendamento!: NgForm;
 agendamento!: Agendamento;
+profissional: Profissional[] = [];
+especialidade: Especialidade[] = [];
+hospital: Hospital[] = [];
 
   constructor(
     private agendamentoService: AgendamentoService,
+    private profissionalService: ProfissionalService,
+    private especialidadeService: EspecialidadeService,
+    private hospitalService: HospitalService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
     this.agendamento = new Agendamento();
+    this.profissional = this.profissionalService.listarTodos();
+    this.especialidade = this.especialidadeService.listarTodos();
+    this.hospital = this.hospitalService.listarTodos();
   }
 
   agendar(): void {
@@ -29,12 +44,12 @@ agendamento!: Agendamento;
     }
   }
 
-  profissional(): void {
-    if (this.formAgendamento.form.valid) {
-      this.agendamentoService.cadastrar(this.agendamento);
-      this.router.navigate(['/cadastro/inserir-cadastro']);
-    }
-  }
+ // profissional(): void {
+ //   if (this.formAgendamento.form.valid) {
+ //     this.agendamentoService.cadastrar(this.agendamento);
+ //     this.router.navigate(['/profissional']);
+ //   }
+ // }
 
   listar(): void {
     if (this.formAgendamento.form.valid) {

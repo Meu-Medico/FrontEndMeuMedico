@@ -17,9 +17,9 @@
     </tr>
     <tr *ngFor="let agendamento of agendamentos">
       <td>{{agendamento.nome}}</td>
-      <td>{{agendamento.hospital}}</td>
-      <td>{{agendamento.especialidade}}</td>
-      <td>{{agendamento.profissional}}</td>
+      <td>{{agendamento?.hospital?.nome}}</td>
+      <td>{{agendamento?.especialidade?.nome}}</td>
+      <td>{{agendamento?.profissional?.nome}}</td>
       <td>{{agendamento.data}}</td>
       <td>{{agendamento.horario}}</td>
       <td class="text-center">

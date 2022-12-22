@@ -20,13 +20,14 @@ export class ListarAgendamentoComponent {
   }
 
   listarTodos(): Agendamento[] {
-    //return this.AgendamentoService.listarTodos();
+    return this.AgendamentoService.listarTodos();
 
-    return [
-      new Agendamento(1, 'Margarida', 'Hospital Menino Jesus', 'Dermatologia', 'Dr Carlos Gomes', '12/12/2020', '12:00'),
-      new Agendamento(1, 'Claudio', 'Clinica Médica', 'Cardiologia', 'Dra Aline', '18/10/2020', '10:00',),
-      new Agendamento(1, 'Margarida', 'Hospital Menino Jesus', 'Dermatologia', 'Dr Carlos Gomes', '12/12/2020', '12:00'),
-      new Agendamento(1, 'Claudio', 'Clinica Médica', 'Cardiologia', 'Dra Aline', '18/10/2020', '10:00',),
-    ]
-  }
+  //  return [
+   //   new Agendamento(1, 'Margarida', 'Hospital Menino Jesus', 'Dermatologia', "Dr Carlos Gomes", '12/12/2020', '12:00'),
+   //   new Agendamento(1, 'Claudio', 'Clinica Médica', 'Cardiologia', 'Dra Aline', '18/10/2020', '10:00',),
+   //   new Agendamento(1, 'Margarida', 'Hospital Menino Jesus', 'Dermatologia', 'Dr Carlos Gomes', '12/12/2020', '12:00'),
+   //   new Agendamento(1, 'Claudio', 'Clinica Médica', 'Cardiologia', 'Dra Aline', '18/10/2020', '10:00',),
+  //  ]
+ // }
+}
 }

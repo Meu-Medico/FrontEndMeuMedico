@@ -3,14 +3,14 @@
 
     <div class="button-line">
 
-      <button routerLink="/coadastro/inserir-cadastro" type="button" class="button" (click)="cadastrar()"
+      <button routerLink="/cadastro/inserir-cadastro" type="button" class="button" (click)="cadastrar()"
         [disabled]="!formAgendamento.form.valid">
       <i class="fa fa-save" aria-hidden="true">Cadastrar</i>
       </button>
 
-      <button routerLink="/coadastro/inserir-cadastro" type="button" class="button" (click)="profissional()"
+      <button routerLink="/profissional" type="button" class="button"
         [disabled]="!formAgendamento.form.valid">
-      <i class="fa fa-save" aria-hidden="true">Sou profissional</i>
+      <i class="fa fa-save" aria-hidden="true">Sou Profissional</i>
       </button>
 
       <button routerLink="/listar-agendamento" type="button" class="button" (click)="listar()"
@@ -29,28 +29,31 @@
     [(ngModel)]="agendamento.nome" #nome="ngModel"/>
 
     <label for="hospital">*Hospital</label>
-    <select name="hospital" class="form-control"   [(ngModel)]="agendamento.hospital" #hospital="ngModel">
-      <option  value="" disabled selected hideen>Selecione o hospital desejado</option>
-      <option value="Felicio Rocho">Felicio Rocho</option>
-      <option value="Unimed">Unimed</option>
-      <option value="Hospital da Baleia">Hospital da Baleia</option>
-    </select>
+    <ng-select name="hospital" class="form-control"
+       [(ngModel)]="agendamento.hospital"
+       #hospital="ngModel"
+       placeholder="Selecione o hospital desejado">
+      </ng-select>>
+
+
 
     <label for="especialidade">*Especialidade Médica</label>
-    <select name="especialidade" class="form-control"  [(ngModel)]="agendamento.especialidade" #especialidade="ngModel">
-      <option  value="" disabled selected hideen>Selecione a especialidade desejada</option>
-      <option value="Oftalmologista">Oftalmologista</option>
-      <option value="Pediatra">Pediatra</option>
-      <option value="Psiquiatra">Psiquiatra</option>
-    </select>
+    <ng-select name="especialidade" class="form-control"
+     bindLabel="nome"
+     [(ngModel)]="agendamento.especialidade"
+     #especialidade="ngModel"
+     placeholder="Selecione a especialidade médica desejada">
+
+    </ng-select>
+
+    [items]="profissional"
 
     <label for="profissional">*Profissional</label>
-    <select name="Profissional" class="form-control"  [(ngModel)]="agendamento.profissional" #profissional="ngModel">
-      <option  value="" disabled selected hideen>Selecione a(o) profissional desejada(o)</option>
-      <option value="Marcela Reis">Marcela Reis</option>
-      <option value="Andrea Guimarães">Andrea Guimarães</option>
-      <option value="Luiza Ramos">Luiza Ramos</option>
-    </select>
+    <ng-select name="Profissional" class="form-control"  #profissional="ngModel"
+      bindLabel="nome"
+      [(ngModel)]="agendamento.profissional"
+      placeholder="Selecione o profissional desejado"
+    ></ng-select>
 
     <label for="data">*Data></label>
     <input type="date" name="data" class="form-control"  [(ngModel)]="agendamento.data" #data="ngModel"/>

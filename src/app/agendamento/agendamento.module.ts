@@ -1,4 +1,4 @@
-import { ProfissionalComponent } from './../profissional/profissional.component';
+
 import { Profissional } from './../shared/models/profissional.model';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';

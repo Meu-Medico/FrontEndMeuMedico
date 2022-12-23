@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'agendamento/listar-agendamento', component: InserirAgendamentoComponent },
   { path: 'cadastro/inserir-cadastro', component: InserirAgendamentoComponent },
   { path: 'profissional', component: InserirAgendamentoComponent },
+  { path: 'agendamento', component: InserirCadastroComponent },
 
 ];
 

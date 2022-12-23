@@ -1,7 +1,24 @@
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Agendamento } from '../../shared/models/agendamento.model';
 
-const LS_CHAVE: string = 'agendamentos';
+ const LS_CHAVE: string = 'agendamentos';
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ProjetoApiService {
+
+  readonly  projetoAPIUrl = "https://localhost:7279/api";
+
+  constructor(private http:HttpClient) { }
+
+   //Tarefa
+  getTInserirAgendamento():Observable<any[]>{
+    return this.http.get<any>(this.projetoAPIUrl + '/inserir-agendamento');
+  }}
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +30,9 @@ export class AgendamentoService {
   listarTodos(): Agendamento[] {
     const agendamentos = localStorage[LS_CHAVE];
     return agendamentos ? JSON.parse(agendamentos) : [];
+    // getxxxx(): Observable<Response<xxx[]>>{
+    //  return this.http.get<Response<xxx[]>>(this.apiUrl);
+   // }
   }
 
   cadastrar(agendamento: Agendamento): void {

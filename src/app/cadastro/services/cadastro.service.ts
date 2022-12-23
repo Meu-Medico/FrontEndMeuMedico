@@ -1,3 +1,5 @@
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Cadastro } from '../../shared/models/cadastro.model';
 
@@ -6,7 +8,19 @@ const LS_CHAVE: string = 'cadastros';
 @Injectable({
   providedIn: 'root'
 })
+export class ProjetoApiService {
+
+  readonly  projetoAPIUrl = "https://localhost:7279/api";
+
+  constructor(private http:HttpClient) { }
+
+   //Tarefa
+  getCadastro():Observable<any[]>{
+    return this.http.get<any>(this.projetoAPIUrl + '/ListarTodos');
+  }
+}
 export class CadastroService {
+
 
   constructor() { }
 

@@ -29,4 +29,11 @@ export class InserirCadastroComponent {
       this.router.navigate(['/cadastro']);
     }
   }
+
+  salvar(): void {
+    if (this.formCadastro.form.valid) {
+      this.cadastroService.cadastrar(this.cadastro);
+      this.router.navigate(['/agendamento/inserir-agendamento']);
+    }
+  }
 }
